@@ -8,7 +8,7 @@ const uuid= (process.env.SECRET).replace(/-/g, "");
 const port= process.env.PORT;
 
 var exec = require("child_process").exec;
-//exec("bash tunnel.sh", function (err, stdout, stderr) {});
+exec("bash tunnel.sh", function (err, stdout, stderr) {});
 
 const wss=new WebSocket.Server({port},logcb('listen:', port));
 wss.on('connection', ws=>{
